@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSN Registration Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --soft-pink: #fff0f3;
+            --deep-blush: #f8bbd0;
+            --accent-rose: #d81b60;
+            --white: #ffffff;
+            --text-gray: #4a4a4a;
+            --whatsapp-green: #25D366;
+        }
+
+        body {
+            background: linear-gradient(rgba(255, 240, 243, 0.85), rgba(255, 240, 243, 0.85)), 
+                        url('https://images.unsplash.com/photo-1490730141103-6cac27aaab94?q=80&w=2070');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-gray);
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            padding: 50px;
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(216, 27, 96, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo-placeholder {
+            width: 120px;
+            height: 120px;
+            background: var(--white);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed var(--deep-blush);
+            overflow: hidden;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: var(--accent-rose);
+            font-size: 2rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-style: italic;
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        /* Top WhatsApp Button Style */
+        .whatsapp-top-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            background-color: transparent;
+            color: var(--whatsapp-green);
+            border: 2px solid var(--whatsapp-green);
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .whatsapp-top-link:hover {
+            background-color: var(--whatsapp-green);
+            color: white;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            border-bottom: 1px solid var(--deep-blush);
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            color: var(--accent-rose);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            background: var(--white);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--deep-blush);
+            box-shadow: 0 0 8px rgba(248, 187, 208, 0.4);
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        input[type="checkbox"], input[type="radio"] {
+            margin-right: 10px;
+            accent-color: var(--accent-rose);
+        }
+
+        .declaration {
+            background: var(--soft-pink);
+            padding: 20px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            text-align: center;
+            border: 1px solid rgba(216, 27, 96, 0.1);
+            font-style: italic;
+        }
+
+        button, .whatsapp-btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, opacity 0.3s ease;
+            margin-top: 30px;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: var(--accent-rose);
+            color: white;
+            box-shadow: 0 4px 15px rgba(216, 27, 96, 0.2);
+        }
+
+        .whatsapp-btn {
+            background-color: var(--whatsapp-green);
+            color: white;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        button:hover, .whatsapp-btn:hover {
+            opacity: 0.95;
+            transform: translateY(-2px);
+        }
+
+        #success-container {
+            display: none;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .success-icon {
+            font-size: 3rem;
+            color: var(--whatsapp-green);
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 25px; }
+            h1 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="logo-placeholder">
+            <img style="width: 100%; height: 100%; object-fit: cover;" src="logo.jpg" alt="HSN Logo">
+        </div>
+        <h1>HER STUDY NETWORK</h1>
+        <p class="subtitle">A Prayer & Word Study Platform for Women in the Marketplace</p>
+        
+        <a href="https://chat.whatsapp.com/HTPUVYeC4C57hAN4SKnBU3?mode=gi_t" class="whatsapp-top-link">
+             Join Our WhatsApp Group
+        </a>
+    </div>
+
+    <form id="registrationForm" action="https://formspree.io/f/mqewgjba" method="POST">
+        
+        <div id="form-fields">
+            <section>
+                <h2>Section 1: Personal Information</h2>
+                <div class="form-group">
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" name="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="location">City & Country of Residence</label>
+                    <input type="text" id="location" name="Location" required>
+                </div>
+                <div class="form-group">
+                    <label>Age Range</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item"><input type="radio" name="Age Range" value="16-20"> 16–20</label>
+                        <label class="checkbox-item"><input type="radio" name="Age Range" value="21-25"> 21–25</label>
+                        <label class="checkbox-item"><input type="radio" name="Age Range" value="26-30"> 26–30</label>
+                        <label class="checkbox-item"><input type="radio" name="Age Range" value="31-40"> 31–40</label>
+                        <label class="checkbox-item"><input type="radio" name="Age Range" value="40+"> 40+</label>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Section 2: Spiritual Background</h2>
+                <div class="form-group">
+                    <label>Are you born again?</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item"><input type="radio" name="Born Again" value="Yes"> Yes</label>
+                        <label class="checkbox-item"><input type="radio" name="Born Again" value="No"> No</label>
+                        <label class="checkbox-item"><input type="radio" name="Born Again" value="Not Sure"> Not Sure</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>How long have you been actively walking with God?</label>
+                    <select name="Walk with God">
+                        <option value="Less than 1 year">Less than 1 year</option>
+                        <option value="1–3 years">1–3 years</option>
+                        <option value="3–5 years">3–5 years</option>
+                        <option value="5+ years">5+ years</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Current prayer life?</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item"><input type="radio" name="Prayer Life" value="Consistent"> Consistent</label>
+                        <label class="checkbox-item"><input type="radio" name="Prayer Life" value="Growing"> Growing</label>
+                        <label class="checkbox-item"><input type="radio" name="Prayer Life" value="Struggling"> Struggling</label>
+                        <label class="checkbox-item"><input type="radio" name="Prayer Life" value="Just starting"> Just starting</label>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Section 3: Marketplace Information</h2>
+                <div class="form-group">
+                    <label>What best describes you?</label>
+                    <select name="Status">
+                        <option value="Student">Student</option>
+                        <option value="Employed">Employed</option>
+                        <option value="Entrepreneur">Entrepreneur</option>
+                        <option value="Freelancer">Freelancer</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="industry">Your field/industry</label>
+                    <input type="text" id="industry" name="Industry">
+                </div>
+                <div class="form-group">
+                    <label for="description">Briefly describe what you do</label>
+                    <textarea id="description" name="Work Description" rows="3"></textarea>
+                </div>
+            </section>
+
+            <section>
+                <h2>Section 4: Interest & Commitment</h2>
+                <div class="form-group">
+                    <label for="why-join">Why do you want to join HSN?</label>
+                    <textarea id="why-join" name="Reason for joining" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Growth Areas (Select all that apply)</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item"><input type="checkbox" name="Growth" value="Prayer"> Prayer</label>
+                        <label class="checkbox-item"><input type="checkbox" name="Growth" value="Word Study"> Studying God’s Word</label>
+                        <label class="checkbox-item"><input type="checkbox" name="Growth" value="Discipline"> Spiritual Discipline</label>
+                        <label class="checkbox-item"><input type="checkbox" name="Growth" value="Purpose"> Purpose & Calling</label>
+                        <label class="checkbox-item"><input type="checkbox" name="Growth" value="Career"> Career/Business</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Are you willing to actively participate?</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item"><input type="radio" name="Participation" value="Yes"> Yes</label>
+                        <label class="checkbox-item"><input type="radio" name="Participation" value="No"> No</label>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Section 5: Community Values</h2>
+                <div class="form-group">
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="Values Agreement" required> I agree to uphold the values of HSN.
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="Vision Alignment" required> I understand I am responsible for inviting only aligned members.
+                    </label>
+                </div>
+            </section>
+
+            <div class="declaration">
+                <p>I commit to growing, praying, and studying God’s Word while contributing positively to the community.</p>
+            </div>
+
+            <button type="submit" id="submitBtn">Submit Registration</button>
+        </div>
+    </form>
+
+    <div id="success-container">
+        <div class="success-icon">✓</div>
+        <h2>Registration Successful!</h2>
+        <p>Thank you for joining Her Study Network. Your details have been received. Please join the community group below to get started.</p>
+        
+        <a href="https://chat.whatsapp.com/HTPUVYeC4C57hAN4SKnBU3?mode=gi_t" class="whatsapp-btn">
+            Join HSN WhatsApp Group
+        </a>
+    </div>
+</div>
+
+<script>
+    const form = document.getElementById('registrationForm');
+    const formFields = document.getElementById('form-fields');
+    const successContainer = document.getElementById('success-container');
+    const submitBtn = document.getElementById('submitBtn');
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        
+        submitBtn.innerText = "Sending...";
+        submitBtn.disabled = true;
+
+        const data = new FormData(form);
+        
+        fetch(form.action, {
+            method: 'POST',
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                formFields.style.display = "none";
+                successContainer.style.display = "block";
+                window.scrollTo(0, 0);
+            } else {
+                response.json().then(data => {
+                    if (Object.hasOwn(data, 'errors')) {
+                        alert(data["errors"].map(error => error["message"]).join(", "));
+                    } else {
+                        alert("Oops! There was a problem submitting your form. Please try again.");
+                    }
+                })
+            }
+        }).catch(error => {
+            alert("Oops! There was a problem submitting your form.");
+            submitBtn.innerText = "Submit Registration";
+            submitBtn.disabled = false;
+        });
+    });
+</script>
+
+</body>
+</html>

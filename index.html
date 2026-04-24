@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>HSN | Radical Devotion — Cloud Sanctuary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Gen Z Cloud Aesthetic Palette */
+            --bg: #ffffff;
+            --accent: #ffafcc; /* Bubblegum Pink */
+            --accent-soft: #ffc8dd; /* Cotton Candy Pink */
+            --sky-blue: #bde0fe;
+            --glass: rgba(255, 255, 255, 0.4);
+            --glass-border: rgba(255, 255, 255, 0.6);
+            --text-main: #4a4a4a;
+            --text-dim: #7d7d7d;
+            --transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        body {
+            background-color: var(--bg);
+            background: radial-gradient(circle at top left, #fff1f2 0%, #ffffff 40%),
+                        radial-gradient(circle at bottom right, #f0f4ff 0%, #ffffff 100%);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* --- UPDATED NAVBAR STYLES --- */
+        .navbar {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1100px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 100px;
+            z-index: 2000; /* Higher Z-index to stay on top */
+            padding: 0.7rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(255, 175, 204, 0.15);
+            transition: var(--transition);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--accent);
+            text-decoration: none;
+            letter-spacing: -1px;
+            z-index: 2101;
+        }
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dim);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .cta-pill {
+            background: var(--accent);
+            color: white;
+            padding: 0.6rem 1.6rem;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.75rem;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(255, 175, 204, 0.4);
+        }
+
+        .cta-pill:hover {
+            background: var(--sky-blue);
+            transform: scale(1.05) rotate(-2deg);
+        }
+
+        /* Hamburger Toggle */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 2101;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background-color: var(--accent);
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 992px) {
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-content {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                flex-direction: column;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(20px);
+                padding: 2.5rem 2rem;
+                border-radius: 30px;
+                margin-top: 15px;
+                border: 1px solid var(--glass-border);
+                box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-10px);
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                gap: 2rem;
+            }
+
+            .nav-content.active {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+
+            /* Toggle Animation */
+            .nav-toggle.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+            .nav-toggle.active span:nth-child(2) { opacity: 0; }
+            .nav-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+        }
+
+        /* --- REST OF STYLES --- */
+        .hero {
+            position: relative;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url('https://images.unsplash.com/photo-1517483000871-1dbf64a6e1c6?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.2), #ffffff);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            max-width: 800px;
+            padding: 0 5%;
+        }
+
+        .hero-tag {
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #ff8fab;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 100px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            display: inline-block;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 10vw, 6rem);
+            font-weight: 800;
+            line-height: 0.9;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.05));
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 1.5rem;
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-copy {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(30px);
+            border: 1px solid white;
+            border-radius: 3rem;
+            padding: 3.5rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+        }
+
+        .eyebrow {
+            color: var(--accent);
+            font-weight: 800;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .hero-copy h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .hero-card {
+            background: white;
+            border-radius: 2.5rem;
+            padding: 2rem;
+            border: 1px solid #f0f0f0;
+            transition: var(--transition);
+        }
+
+        .hero-card:hover {
+            transform: scale(1.02);
+            border-color: var(--accent);
+            box-shadow: 0 15px 30px rgba(255, 175, 204, 0.2);
+        }
+
+        .hero-card .icon { font-size: 2.5rem; margin-bottom: 1rem; }
+
+        .pillars-section { text-align: center; margin: 120px 0; }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .pillar-card {
+            background: linear-gradient(135deg, #ffffff 0%, #fff5f8 100%);
+            border: 1px solid white;
+            border-radius: 2.5rem;
+            padding: 3rem 2rem;
+            transition: var(--transition);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.02);
+        }
+
+        .pillar-card:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-10px);
+        }
+
+        .pillar-card:hover p { color: white; }
+
+        .story-block { margin: 100px 0; }
+        .story-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        .story-image img { 
+            width: 100%;
+            height: auto;
+            border-radius: 3rem; 
+            border: 8px solid white; 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+
+        .membership-panel {
+            background: var(--accent-soft);
+            border-radius: 4rem;
+            padding: 5rem 2rem;
+            text-align: center;
+            border: 2px dashed white;
+            margin: 100px 0;
+        }
+
+        .join-now {
+            background: white;
+            color: var(--accent);
+            padding: 1.2rem 3rem;
+            border-radius: 100px;
+            font-weight: 800;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 2rem;
+            box-shadow: 0 10px 25px rgba(255, 175, 204, 0.3);
+            transition: var(--transition);
+        }
+
+        .join-now:hover {
+            transform: translateY(-5px);
+            background: var(--sky-blue);
+            color: white;
+        }
+
+        .page-footer { padding: 4rem 0; text-align: center; color: var(--text-dim); font-size: 0.8rem; }
+
+        @media (max-width: 900px) {
+            .hero-grid, .story-content { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="#" class="logo">HSN</a>
+
+        <div class="nav-content" id="navContent">
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="gatherings.html">EVENTS</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+            </ul>
+            <a href="Register.html" class="cta-pill">Join →</a>
+        </div>
+
+        <button class="nav-toggle" id="menuBtn" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <span class="hero-tag">✿ WELCOME TO HER STUDY NETWORK ✿</span>
+            <h1>Radical<br>Devotion.</h1>
+            <p>Here, we gather not only as individuals but as a collective force, women who are passionate about seeing God’s Kingdom established in every sphere of influence through His Word and through the works of our hands.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="vision" class="hero-grid">
+            <div class="hero-copy">
+                <span class="eyebrow">The Vibe Shift</span>
+                <h2>Lead with grace,<br>scale with ease.</h2>
+                <p>We are moving away from the hustle and into the overflow. HSN is a sanctuary for those who want to build empires while staying soft, centered, and sacred.</p>
+                <a href="#" class="cta-pill" style="display:inline-block; margin-top:1rem;">Explore Manifesto</a>
+            </div>
+            <div class="hero-panel">
+                <div class="hero-card">
+                    <div class="icon">✨</div>
+                    <h3>Cloud Mindset</h3>
+                    <p>Clarity over chaos. We prioritize peace as our primary KPI.</p>
+                </div>
+                <div class="hero-card">
+                    <div class="icon">☁️</div>
+                    <h3>Soft Power</h3>
+                    <p>Influence that feels like a breeze, not a storm. Magnetic results.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="pillars" class="pillars-section">
+            <span class="eyebrow">Core Values</span>
+            <h2>The Cloud Pillars</h2>
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <h3>01. Radiance</h3>
+                    <p>Your energy is your greatest asset. We help you protect and project it.</p>
+                </div>
+                <div class="pillar-card">
+                    <h3>02. Ritual</h3>
+                    <p>Turning daily habits into sacred ceremonies that fuel your brand.</p>
+                </div>
+                <div class="pillar-card">
+                    <h3>03. Flow</h3>
+                    <p>Scaling without the friction. Systems that breathe with you.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="story-block">
+            <div class="story-content">
+                <div class="story-image">
+                    <img src="https://i.pinimg.com/736x/11/cb/7b/11cb7b5ba2f5dd951a4bf6b177695dce.jpg" alt="aesthetic desk">
+                </div>
+                <div class="story-copy" style="background:none; box-shadow:none;">
+                    <span class="eyebrow">Our Origins</span>
+                    <h2>Created for the Dreamers.</h2>
+                    <p>HSN started as a digital moodboard and grew into a global movement. We believe that business is a form of art, and your life is the canvas.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="membership" class="membership-panel">
+            <h2>Ready to float?</h2>
+            <p>Join the Inner Circle for monthly strategy, dreamy networking, and radical support.</p>
+            <a href="#" class="join-now">Apply for Membership</a>
+        </div>
+    </main>
+
+    <footer class="page-footer">
+        <p>© 2026 HOUSE OF SACRED NOISE. STAY SOFT. ✨</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const navContent = document.getElementById('navContent');
+
+        // Toggle mobile menu
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('active');
+            navContent.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link (ideal for UX)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.classList.remove('active');
+                navContent.classList.remove('active');
+            });
+        });
+
+        // Optional: Close menu when clicking outside
+        window.addEventListener('click', (e) => {
+            if (!navContent.contains(e.target) && !menuBtn.contains(e.target) && navContent.classList.contains('active')) {
+                menuBtn.classList.remove('active');
+                navContent.classList.remove('active');
+            }
+        });
+    </script>
+
+</body>
+</html>
