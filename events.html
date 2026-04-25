@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Events & Gatherings | HSN — Her Study Network</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>HSN | Gatherings & Events — Love in Action</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,574 +13,568 @@
         }
 
         :root {
-            --soft-cream: #fdf8f4;
-            --muted-rose: #d68c8c;
-            --deep-rose: #a65d5d;
-            --deep-rose-dark: #8b4a4a;
-            --text-dark: #3a2d2d;
-            --text-light: #7a6b6b;
-            --white: #ffffff;
-            --nav-bg: rgba(255, 255, 255, 0.96);
-            --shadow-sm: 0 12px 28px rgba(0, 0, 0, 0.05);
-            --shadow-hover: 0 20px 32px -12px rgba(166, 93, 93, 0.2);
-            --transition-default: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            --bg: #ffffff;
+            --accent: #ffafcc;
+            --accent-soft: #ffc8dd;
+            --sky-blue: #bde0fe;
+            --glass: rgba(255, 255, 255, 0.4);
+            --glass-border: rgba(255, 255, 255, 0.6);
+            --text-main: #4a4a4a;
+            --text-dim: #7d7d7d;
+            --transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
         }
 
         body {
-            background-color: var(--soft-cream);
-            color: var(--text-dark);
-            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at top left, #fff1f2 0%, #ffffff 40%),
+                        radial-gradient(circle at bottom right, #f0f4ff 0%, #ffffff 100%);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
-        h1, h2, h3, .serif {
-            font-family: 'DM Serif Display', serif;
-            font-weight: 400;
-        }
-
-        /* ========= NAVBAR (same refined style) ========= */
+        /* navbar exact same as about page */
         .navbar {
-            position: sticky;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: var(--nav-bg);
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1100px;
+            background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(166, 93, 93, 0.15);
-            transition: var(--transition-default);
-        }
-
-        .nav-container {
-            max-width: 1440px;
-            margin: 0 auto;
-            padding: 0.9rem 5%;
+            border: 1px solid var(--glass-border);
+            border-radius: 100px;
+            z-index: 2000;
+            padding: 0.7rem 2rem;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            gap: 1.5rem;
-            flex-wrap: wrap;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(255, 175, 204, 0.15);
+            transition: var(--transition);
         }
 
-        .logo-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            text-decoration: none;
+        .logo img {
+            height: 55px;
+            width: auto;
+            border-radius: 50%;
             transition: transform 0.2s ease;
         }
-        .logo-wrapper:hover {
+        .logo img:hover {
             transform: scale(1.02);
         }
-        .logo-img {
-            height: 52px;
-            width: auto;
-            border-radius: 18px;
-            object-fit: cover;
-            box-shadow: 0 10px 18px -6px rgba(0, 0, 0, 0.08);
-        }
-        .logo-text {
-            font-family: 'DM Serif Display', serif;
-            font-size: 1.35rem;
-            letter-spacing: -0.3px;
-            background: linear-gradient(135deg, var(--deep-rose) 0%, #b67676 100%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: var(--deep-rose);
-            font-weight: 500;
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
         }
 
         .nav-links {
             display: flex;
             gap: 2rem;
             list-style: none;
-            align-items: center;
         }
-        .nav-links li a {
+
+        .nav-links a {
             text-decoration: none;
-            font-weight: 550;
-            font-size: 0.95rem;
-            color: var(--text-dark);
-            padding: 0.5rem 0.2rem;
-            position: relative;
-            transition: color 0.2s;
+            color: var(--text-dim);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
         }
-        .nav-links li a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0%;
-            height: 2px;
-            background: var(--muted-rose);
-            border-radius: 4px;
-            transition: width 0.3s ease;
+
+        .nav-links a:hover {
+            color: var(--accent);
         }
-        .nav-links li a:hover {
-            color: var(--deep-rose);
-        }
-        .nav-links li a:hover::after {
-            width: 100%;
-        }
-        .nav-cta {
-            background: var(--muted-rose);
-            color: var(--white);
-            padding: 0.7rem 1.6rem;
-            border-radius: 60px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: var(--transition-default);
-            box-shadow: 0 2px 6px rgba(166, 93, 93, 0.2);
-            white-space: nowrap;
-            border: 1px solid rgba(255,255,240,0.2);
-        }
-        .nav-cta:hover {
-            background: var(--deep-rose);
-            transform: translateY(-2px);
-        }
-        .hamburger {
-            display: none;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-            border-radius: 40px;
-            width: 44px;
-            height: 44px;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 6px;
-        }
-        .hamburger span {
-            display: block;
-            width: 26px;
-            height: 2.2px;
-            background-color: var(--deep-rose);
-            border-radius: 6px;
-            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 80%;
-            max-width: 380px;
-            height: 100vh;
-            background: rgba(255, 253, 250, 0.98);
-            backdrop-filter: blur(24px);
-            box-shadow: -10px 0 40px rgba(0, 0, 0, 0.08);
-            z-index: 2000;
-            padding: 6rem 2rem 2rem;
-            transition: right 0.4s ease-in-out;
-            display: flex;
-            flex-direction: column;
-            gap: 2.5rem;
-            border-left: 1px solid rgba(166, 93, 93, 0.2);
-        }
-        .mobile-menu.active {
-            right: 0;
-        }
-        .mobile-nav-links {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 1.8rem;
-        }
-        .mobile-nav-links li a {
-            text-decoration: none;
-            font-size: 1.45rem;
-            font-weight: 500;
-            color: var(--text-dark);
-            font-family: 'DM Serif Display', serif;
-            transition: 0.2s;
-        }
-        .mobile-cta {
-            background: var(--muted-rose);
+
+        .cta-pill {
+            background: var(--accent);
             color: white;
-            padding: 1rem;
-            text-align: center;
-            border-radius: 60px;
-            font-weight: 600;
+            padding: 0.6rem 1.6rem;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.75rem;
             text-decoration: none;
-            font-size: 1.1rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(255, 175, 204, 0.4);
         }
-        .close-menu {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.8rem;
+
+        .cta-pill:hover {
+            background: var(--sky-blue);
+            transform: scale(1.05) rotate(-2deg);
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
             background: none;
             border: none;
-            font-size: 2rem;
             cursor: pointer;
-            color: var(--deep-rose);
+            padding: 5px;
+            z-index: 2101;
         }
-        .menu-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(58, 45, 45, 0.2);
-            backdrop-filter: blur(3px);
-            z-index: 1999;
-            visibility: hidden;
-            opacity: 0;
-            transition: 0.2s;
-        }
-        .menu-overlay.active {
-            visibility: visible;
-            opacity: 1;
+        .nav-toggle span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background-color: var(--accent);
+            border-radius: 2px;
+            transition: 0.3s;
         }
 
-        @media (max-width: 790px) {
-            .nav-links, .nav-cta { display: none; }
-            .hamburger { display: flex; }
+        @media (max-width: 992px) {
+            .nav-toggle {
+                display: flex;
+            }
+            .nav-content {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                flex-direction: column;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(20px);
+                padding: 2.5rem 2rem;
+                border-radius: 30px;
+                margin-top: 15px;
+                border: 1px solid var(--glass-border);
+                box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-10px);
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                gap: 2rem;
+            }
+            .nav-content.active {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+            .nav-toggle.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+            .nav-toggle.active span:nth-child(2) { opacity: 0; }
+            .nav-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
         }
 
-        /* ========= EVENTS PAGE SPECIFIC ========= */
-        .events-hero {
-            background: linear-gradient(125deg, #faf0ea 0%, #f5e4db 100%);
-            padding: 5rem 5% 3rem;
-            text-align: center;
-        }
-        .events-hero h1 {
-            font-size: clamp(2.8rem, 6vw, 4.2rem);
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-        }
-        .events-hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-            color: var(--text-light);
-        }
-
-        /* Featured Event Card — LOVE IN ACTION OUTREACH (flyer content) */
-        .featured-event {
+        .container {
             max-width: 1200px;
-            margin: 4rem auto 2rem;
+            margin: 0 auto;
             padding: 0 5%;
         }
-        .outreach-mega {
-            background: var(--white);
-            border-radius: 48px;
-            overflow: hidden;
-            box-shadow: 0 35px 45px -20px rgba(166,93,93,0.25);
+
+        /* soft animations */
+        .soft-enter {
+            opacity: 0;
+            transform: translateY(18px);
+            animation: softEnter 0.9s ease-out forwards;
+        }
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.25s; }
+        .delay-3 { animation-delay: 0.4s; }
+        @keyframes softEnter {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* hero events */
+        .events-hero {
+            padding-top: 150px;
+            padding-bottom: 60px;
+            text-align: center;
+            background-image: url('https://i.pinimg.com/736x/b8/5b/11/b85b11c49af8a605da2122d8d2f42ee8.jpg');
+            background-size: cover;
+            background-position: center 30%;
+            position: relative;
+            border-radius: 0 0 3rem 3rem;
+        }
+        .events-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,245,0.85), rgba(255,235,240,0.9));
+            border-radius: 0 0 3rem 3rem;
+            z-index: 1;
+        }
+        .hero-inner {
+            position: relative;
+            z-index: 2;
+        }
+        .events-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.6rem, 8vw, 4.5rem);
+            font-weight: 800;
+            color: #4a3b4a;
+            margin-bottom: 1rem;
+        }
+        .eyebrow {
+            display: inline-block;
+            color: var(--accent);
+            font-weight: 800;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 1rem;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 0.5rem 1.2rem;
+            border-radius: 100px;
+            backdrop-filter: blur(4px);
+        }
+
+        /* MAIN EVENT CARD (flyer details) */
+        .outreach-event {
+            background: rgba(255, 255, 245, 0.8);
+            backdrop-filter: blur(12px);
+            border-radius: 3rem;
+            padding: 2rem 2rem;
+            margin: 3rem 0;
+            border: 1px solid rgba(255,255,255,0.9);
+            box-shadow: 0 20px 35px rgba(255, 175, 204, 0.2);
+            transition: transform 0.2s ease;
+        }
+        .event-header {
             display: flex;
             flex-wrap: wrap;
-            border: 1px solid rgba(166,93,93,0.2);
-            transition: var(--transition-default);
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 3px dashed var(--accent-soft);
+            padding-bottom: 1rem;
+            margin-bottom: 1.8rem;
         }
-        .outreach-content {
-            flex: 2;
-            padding: 2.5rem 2.8rem;
+        .event-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #6b3e5c;
+            letter-spacing: -0.3px;
         }
-        .outreach-badge {
-            display: inline-block;
-            background: var(--muted-rose);
+        .event-tag {
+            background: var(--accent);
+            padding: 0.3rem 1rem;
+            border-radius: 60px;
             color: white;
-            padding: 0.25rem 1rem;
-            border-radius: 40px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            margin-bottom: 1.2rem;
+            font-weight: 700;
+            font-size: 0.7rem;
         }
-        .outreach-content h2 {
-            font-size: 2.4rem;
-            color: var(--deep-rose);
+        .details-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: space-between;
+            margin: 2rem 0;
+        }
+        .info-card {
+            flex: 1;
+            background: rgba(255,255,250,0.6);
+            border-radius: 2rem;
+            padding: 1.2rem 1.5rem;
+            backdrop-filter: blur(5px);
+        }
+        .info-icon {
+            font-size: 1.8rem;
             margin-bottom: 0.5rem;
         }
-        .outreach-tagline {
-            font-family: 'DM Serif Display', serif;
-            font-size: 1.2rem;
-            color: var(--deep-rose-dark);
-            margin-bottom: 1.5rem;
-            border-left: 3px solid var(--muted-rose);
-            padding-left: 1rem;
-        }
-        .event-details-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            margin: 1.8rem 0;
-        }
-        .detail-item {
-            background: var(--soft-cream);
-            padding: 0.6rem 1.2rem;
-            border-radius: 50px;
-            font-weight: 500;
+        .info-label {
+            font-weight: 800;
+            color: var(--accent);
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
         }
         .donation-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.7rem;
-            margin: 1.5rem 0;
+            gap: 1rem;
+            margin: 1rem 0;
         }
-        .donation-pill {
-            background: #f1e6e0;
-            padding: 0.4rem 1rem;
-            border-radius: 60px;
+        .donation-item {
+            background: white;
+            border-radius: 100px;
+            padding: 0.5rem 1.2rem;
             font-size: 0.85rem;
-            font-weight: 500;
+            font-weight: 600;
+            color: #6b4260;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.02);
         }
         .rsvp-buttons {
-            display: flex;
+            margin-top: 1.5rem;
             gap: 1rem;
-            margin: 1.5rem 0;
+            display: flex;
             flex-wrap: wrap;
+            justify-content: center;
         }
-        .btn-primary {
-            background: var(--deep-rose);
-            color: white;
+        .btn-rsvp {
+            background: #ffafccdd;
+            backdrop-filter: blur(4px);
             padding: 0.8rem 1.8rem;
-            border-radius: 60px;
+            border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
-            transition: 0.2s;
-            display: inline-block;
+            font-weight: 800;
+            color: #3b2a3b;
+            transition: 0.3s;
         }
-        .btn-primary:hover {
-            background: var(--deep-rose-dark);
-            transform: translateY(-2px);
-        }
-        .btn-outline-dark {
-            border: 1.5px solid var(--muted-rose);
-            background: transparent;
-            color: var(--deep-rose);
-            padding: 0.8rem 1.8rem;
-            border-radius: 60px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: 0.2s;
-        }
-        .btn-outline-dark:hover {
-            background: var(--muted-rose);
+        .btn-rsvp:hover {
+            background: var(--accent);
             color: white;
+            transform: scale(1.02);
         }
-        .outreach-image {
-            flex: 1.2;
-            background: #e5cfc5;
-            min-height: 320px;
-            background-image: url('https://i.pinimg.com/1200x/73/d9/a3/73d9a3aa96ff352c24388cd9d6c4d8ec.jpg');
-            background-size: cover;
-            background-position: center;
+        .venue-highlight {
+            background: #fff0f3;
+            border-radius: 2rem;
+            padding: 0.8rem 1.8rem;
+            text-align: center;
+            margin-top: 1rem;
         }
 
-        /* recurring events grid */
-        .section-title {
-            text-align: center;
-            margin: 5rem 0 2rem;
-        }
-        .section-title h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        .events-grid {
-            max-width: 1280px;
-            margin: 0 auto 5rem;
-            padding: 0 5%;
+        /* upcoming gatherings calendar style */
+        .upcoming-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
+            margin: 3rem 0;
         }
-        .event-card {
-            background: var(--white);
-            border-radius: 32px;
-            overflow: hidden;
-            transition: var(--transition-default);
-            box-shadow: var(--shadow-sm);
-        }
-        .event-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-hover);
-        }
-        .event-img {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-        }
-        .event-card-content {
+        .gather-card {
+            background: white;
+            border-radius: 2rem;
             padding: 1.8rem;
+            transition: all 0.3s;
+            border: 1px solid #ffe2ec;
+            box-shadow: 0 5px 14px rgba(0,0,0,0.02);
         }
-        .event-card h3 {
+        .gather-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent);
+        }
+        .gather-date {
+            font-weight: 800;
+            color: var(--accent);
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+        }
+        .gather-name {
+            font-family: 'Playfair Display', serif;
             font-size: 1.6rem;
-            margin-bottom: 0.75rem;
+            margin: 0.5rem 0;
         }
-        .event-meta {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin: 1rem 0;
-            font-size: 0.85rem;
-            color: var(--deep-rose);
-            font-weight: 500;
+        .pillar-icon-small {
+            font-size: 1.4rem;
+            margin: 0.5rem 0;
         }
-        .footer {
-            background: #1e1714;
-            color: #e7dcd8;
-            padding: 3rem 5%;
+        .register-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--accent);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .message-compassion {
+            background: linear-gradient(120deg, #fff6f9, #ffffff);
+            border-radius: 2rem;
+            padding: 2rem;
             text-align: center;
-            margin-top: 2rem;
+            margin: 2rem 0;
         }
-        @media (max-width: 800px) {
-            .outreach-content { padding: 1.8rem; }
-            .outreach-content h2 { font-size: 1.9rem; }
+
+        .footer-events {
+            padding: 3rem 0 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 175, 204, 0.3);
+            margin-top: 3rem;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 760px) {
+            .event-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .details-grid {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo-wrapper">
-                <img src="logo.jpg" alt="HSN Logo" class="logo-img" onerror="this.src='https://placehold.co/60x60?text=HSN'">
-                <span class="logo-text">Her Study Network</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="gatherings.html" style="color: var(--deep-rose);">Gatherings</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <a href="Register.html" class="nav-cta">Join Now →</a>
-            <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </nav>
-    <div class="mobile-menu" id="mobileMenu">
-        <button class="close-menu" id="closeMenuBtn">✕</button>
-        <ul class="mobile-nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="gatherings.html">Gatherings</a></li>
-            <li><a href="contact.html">Contact</a></li>
+
+<nav class="navbar">
+    <a href="index.html" class="logo">
+        <img src="logo.jpg" alt="HSN Logo" style="height: 60px; width: auto; border-radius: 50%;">
+    </a>
+    <div class="nav-content" id="navContent">
+        <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT US</a></li>
+            <li><a href="gatherings.html" style="color: #ff8fab;">EVENTS</a></li>
+            <li><a href="contact.html">CONTACT US</a></li>
         </ul>
-        <a href="Register.html" class="mobile-cta">Join the Movement</a>
+        <a href="Register.html" class="cta-pill">Join →</a>
     </div>
-    <div class="menu-overlay" id="menuOverlay"></div>
+    <button class="nav-toggle" id="menuBtn" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</nav>
 
-    <section class="events-hero">
-        <h1>Gatherings & Outreach</h1>
-        <p>Join a community of women gathered for prayer, the Word, and radical love in action. Experience life-changing events and be part of something bigger.</p>
-    </section>
+<main>
+    <div class="events-hero">
+        <div class="hero-inner">
+            <span class="eyebrow">✧ love in action, hope in every gift ✧</span>
+            <h1>Gatherings & Outreach</h1>
+            <p style="max-width: 700px; margin: 0 auto; font-size: 1.1rem; background: rgba(255,255,240,0.6); backdrop-filter: blur(6px); padding: 0.6rem 1.5rem; border-radius: 50px; display: inline-block;">Where faith meets tangible love — we reach out, we pray, we serve.</p>
+        </div>
+    </div>
 
-    <!-- FLYER EVENT: LOVE IN ACTION OUTREACH (featured) -->
-    <div class="featured-event">
-        <div class="outreach-mega">
-            <div class="outreach-content">
-                <span class="outreach-badge">🔥 Flagship Outreach 2026</span>
-                <h2>LOVE IN ACTION, HOPE IN EVERY GIFT</h2>
-                <div class="outreach-tagline">“Together, we can make a difference.”</div>
-                <p>Join HSN as we reach out to families and individuals in need with compassion, love, and practical support. Your presence and donations bring tangible hope to our community.</p>
-                <div class="event-details-grid">
-                    <span class="detail-item">📍 Kpaduma1 Primary School, Asokoro</span>
-                    <span class="detail-item">📅 25th April 2026</span>
-                    <span class="detail-item">⏰ 10am prompt</span>
+    <div class="container">
+        <!-- MAIN OUTREACH EVENT (Flyer content fully integrated) -->
+        <div class="outreach-event soft-enter delay-1">
+            <div class="event-header">
+                <span class="event-title">🌸 Love in Action Outreach</span>
+                <span class="event-tag">✨ Special Community Impact ✨</span>
+            </div>
+            <p style="font-size: 1.1rem; font-weight: 500; margin-bottom: 1rem;"><strong>“HOPE IN EVERY GIFT”</strong> — Join us as we reach out to those in need with compassion, love, and practical support.</p>
+            
+            <div class="details-grid">
+                <div class="info-card">
+                    <div class="info-icon">📍</div>
+                    <div class="info-label">VENUE</div>
+                    <p style="font-weight: 700; margin-top: 8px;">Kpaduma1 Primary School, Asokoro</p>
+                    <p style="font-size: 0.85rem;">(Abuja, FCT)</p>
                 </div>
-                <div><strong>🤝 We welcome:</strong></div>
-                <div class="donation-list">
-                    <span class="donation-pill">Cash Donations</span>
-                    <span class="donation-pill">Food items</span>
-                    <span class="donation-pill">Clothes</span>
-                    <span class="donation-pill">Shoes</span>
-                    <span class="donation-pill">Household items</span>
+                <div class="info-card">
+                    <div class="info-icon">📅</div>
+                    <div class="info-label">DATE & TIME</div>
+                    <p style="font-weight: 700; margin-top: 8px;">25th April 2026</p>
+                    <p>10am prompt</p>
                 </div>
-                <p><em>All donations will be highly appreciated.</em></p>
-                <div class="rsvp-buttons">
-                    <a href="tel:08105251185" class="btn-primary">📞 RSVP: 0810 525 1185</a>
-                    <a href="tel:07066233703" class="btn-outline-dark">📞 0706 623 3703</a>
-                    <a href="#" class="btn-outline-dark">✉️ Volunteer</a>
+                <div class="info-card">
+                    <div class="info-icon">🎁</div>
+                    <div class="info-label">We Welcome</div>
+                    <div class="donation-list">
+                        <span class="donation-item">💰 Cash Donations</span>
+                        <span class="donation-item">🍲 Food items</span>
+                        <span class="donation-item">👗 Clothes</span>
+                        <span class="donation-item">👠 Shoes</span>
+                        <span class="donation-item">🏠 Household items</span>
+                    </div>
+                    <p style="font-size: 0.75rem; margin-top: 0.5rem;">All donations will be highly appreciated. Your generosity brings hope.</p>
                 </div>
             </div>
-            <div class="outreach-image" title="HSN outreach compassion"></div>
+            <div class="venue-highlight">
+                ✨ Together, we can make a difference. ✨
+            </div>
+            <div class="rsvp-buttons">
+                <a href="tel:08105251185" class="btn-rsvp">📞 RSVP: 08105251185</a>
+                <a href="tel:07066233703" class="btn-rsvp">📞 07066233703</a>
+                <a href="Register.html" class="btn-rsvp" style="background:var(--sky-blue);">🤝 Join as Volunteer</a>
+            </div>
+            <p style="text-align: center; margin-top: 1.5rem; font-size: 0.8rem;">All are welcome to partner with us — whether in prayer, donation, or presence. Let your light shine.</p>
         </div>
-    </div>
 
-    <!-- Ongoing weekly gatherings -->
-    <div class="section-title">
-        <h2>Recurring Gatherings</h2>
-        <div style="width: 70px; height: 3px; background: var(--muted-rose); margin: 0.5rem auto;"></div>
-        <p style="color: var(--text-light);">Deepen your walk with God through our weekly rhythm of prayer and study.</p>
-    </div>
-    <div class="events-grid">
-        <div class="event-card">
-            <div class="event-img" style="background-image: url('https://i.pinimg.com/736x/26/9b/a9/269ba91b80d7148b55d03e1307aa6fb1.jpg');"></div>
-            <div class="event-card-content">
-                <h3>Midnight Intercessors</h3>
-                <div class="event-meta">🕊️ Every Wednesday | 11:59pm WAT (Zoom)</div>
-                <p>A sacred hour of night prayer, prophetic declarations, and warfare for families, nations, and personal breakthrough. God meets us in the deep watch.</p>
-                <a href="#" class="btn-outline-dark" style="display: inline-block; margin-top: 1rem;">Join Prayer Link →</a>
+        <!-- How to help / Donation drive message -->
+        <div class="message-compassion soft-enter delay-2">
+            <span class="eyebrow" style="margin-bottom: 0;">Make an impact</span>
+            <h2 style="font-family: 'Playfair Display', serif; margin: 0.5rem 0;">“Love in action is hope made visible.”</h2>
+            <p style="max-width: 700px; margin: 1rem auto;">Every donated item, every financial gift, every volunteer hour becomes a tangible expression of God’s love. Join HSN as we bring relief and dignity to families in the Asokoro community and beyond.</p>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+                <div style="background:#ffeef4; border-radius:28px; padding:0.5rem 1.2rem;">❤️ Food Drive (Rice, Beans, Oil)</div>
+                <div style="background:#ffeef4; border-radius:28px; padding:0.5rem 1.2rem;">📚 School supplies for kids</div>
+                <div style="background:#ffeef4; border-radius:28px; padding:0.5rem 1.2rem;">🧥 Winter / Rain coats</div>
             </div>
         </div>
-        <div class="event-card">
-            <div class="event-img" style="background-image: url('https://i.pinimg.com/736x/8a/42/fd/8a42fd8b9b879f2574bdb60422faf5d1.jpg');"></div>
-            <div class="event-card-content">
-                <h3>Word & Table Study</h3>
-                <div class="event-meta">📖 Saturdays | 9am WAT (Hybrid: Asokoro + Online)</div>
-                <p>Deep-dive Bible study using the inductive method. We explore the scriptures, share insights, and apply God's truth to marketplace challenges.</p>
-                <a href="#" class="btn-outline-dark" style="display: inline-block; margin-top: 1rem;">Register for Study →</a>
+
+        <!-- recurring HSN gatherings (prayer & sisterhood) -->
+        <div class="soft-enter delay-3">
+            <span class="eyebrow" style="margin-left: auto; margin-right: auto; display: table;">UPCOMING GATHERINGS</span>
+            <h2 style="text-align: center; font-family: 'Playfair Display', serif; font-size: 1.9rem;">Our regular rhythm of grace</h2>
+            <div class="upcoming-grid">
+                <div class="gather-card">
+                    <div class="gather-date">📆 Every Thursday • 6pm WAT</div>
+                    <div class="pillar-icon-small">🕯️</div>
+                    <div class="gather-name">The Altar Hour</div>
+                    <p>Weekly prayer & intercession — deep intimacy with the Father, praying for our nation, families, and marketplace.</p>
+                    <a href="#" class="register-link">Join via Zoom →</a>
+                </div>
+                <div class="gather-card">
+                    <div class="gather-date">📖 1st & 3rd Saturdays • 4pm WAT</div>
+                    <div class="pillar-icon-small">📖</div>
+                    <div class="gather-name">Word & Wisdom Circle</div>
+                    <p>Bible study, prophecy, and mentorship. Growing in God’s word and practical kingdom principles.</p>
+                    <a href="#" class="register-link">Get link →</a>
+                </div>
+                <div class="gather-card">
+                    <div class="gather-date">🌸 Monthly Outreach (Next: April 25th)</div>
+                    <div class="pillar-icon-small">🤝</div>
+                    <div class="gather-name">Love on the Streets</div>
+                    <p>Our flagship outreach — food, clothes, and hope. Partner with us as we serve the underserved.</p>
+                    <a href="#" class="register-link">Volunteer →</a>
+                </div>
+                <div class="gather-card">
+                    <div class="gather-date">🎀 Last Sunday • 5pm WAT</div>
+                    <div class="pillar-icon-small">👭</div>
+                    <div class="gather-name">Sisterhood & Testimonies</div>
+                    <p>Virtual fellowship: worship, testimonies, and prophetic encouragement for the week ahead.</p>
+                    <a href="#" class="register-link">Register now →</a>
+                </div>
             </div>
         </div>
-        <div class="event-card">
-            <div class="event-img" style="background-image: url('https://i.pinimg.com/736x/ed/03/19/ed0319b142bb7ff0d84c550faa02747c.jpg');"></div>
-            <div class="event-card-content">
-                <h3>HSN Huddle (Sisterhood Circle)</h3>
-                <div class="event-meta">☕ Last Friday monthly | 4pm WAT</div>
-                <p>An intimate gathering of women sharing testimonies, accountability, and vision casting. Light refreshments, mentorship, and prayer.</p>
-                <a href="#" class="btn-outline-dark" style="display: inline-block; margin-top: 1rem;">Join Next Huddle →</a>
+
+        <!-- special call from flyer: supplementary message -->
+        <div style="background: rgba(189, 224, 254, 0.3); border-radius: 2rem; padding: 2rem; margin: 2rem 0; text-align: center;">
+            <h3 style="font-family: 'Playfair Display', serif;">💖 "Together, we can make a difference." 💖</h3>
+            <p style="margin: 0.6rem 0;">Every act of kindness, every donated item, every prayer sent — it echoes into eternity. HSN is a movement of women extending the heart of Jesus.</p>
+            <div style="display: flex; gap: 12px; justify-content: center; margin-top: 1rem; flex-wrap: wrap;">
+                <span style="background: white; padding: 0.4rem 1rem; border-radius: 40px;">📞 08105251185</span>
+                <span style="background: white; padding: 0.4rem 1rem; border-radius: 40px;">📞 07066233703</span>
             </div>
+            <p style="margin-top: 1rem; font-size: 0.8rem;">For inquiries, bulk donations or to sponsor a family, reach out to our outreach team.</p>
+        </div>
+
+        <!-- Invitation card to join future events -->
+        <div style="margin: 2rem 0 1rem; text-align: center;">
+            <a href="Register.html" style="background: #ffafcc; color: white; padding: 1rem 2.2rem; border-radius: 60px; text-decoration: none; font-weight: 800; display: inline-block; box-shadow: 0 6px 16px rgba(0,0,0,0.05); transition: all 0.3s;">✨ Become a heart of hope — Join HSN ✨</a>
+            <p style="margin-top: 1rem; font-size: 0.85rem;">Don't miss the next update: sign up to receive prayer points & outreach alerts.</p>
         </div>
     </div>
+</main>
 
-    <!-- additional upcoming special event: quarterly leadership conference -->
-    <div class="section-title">
-        <h2>Upcoming Special Events</h2>
-    </div>
-    <div style="max-width: 1100px; margin: 0 auto 5rem; padding: 0 5%;">
-        <div style="background: #fff0e8; border-radius: 28px; padding: 2rem; display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
-            <div style="flex: 1;">
-                <span style="background: var(--deep-rose); color: white; padding: 0.2rem 1rem; border-radius: 30px; font-size: 0.75rem;">Limited Seats</span>
-                <h3 style="font-size: 1.8rem; margin: 1rem 0 0.5rem;">The Esther Company Conference</h3>
-                <p>Theme: "For Such a Time as This" — Equipping women to influence their spheres with grace and authority. Keynotes, worship, and strategic networking.</p>
-                <div class="event-meta" style="margin-top: 1rem;">📅 15th - 17th May 2026 | 📍 Abuja Continental Hotel</div>
-                <a href="#" class="btn-primary" style="margin-top: 1rem; display: inline-block;">Save Your Seat →</a>
-            </div>
-            <div style="flex: 0.8; background: #dbb9ab; height: 180px; border-radius: 24px; background-image: url('https://i.pinimg.com/1200x/73/d9/a3/73d9a3aa96ff352c24388cd9d6c4d8ec.jpg'); background-size: cover; background-position: center;"></div>
-        </div>
-    </div>
+<footer class="footer-events">
+    <p>© 2026 Her Study Network — Love in Action. Hope in Every Gift. 🤍</p>
+    <p>A Prayer Platform for Women | Outreach | Sisterhood rising</p>
+</footer>
 
-    <footer class="footer">
-        <p style="font-family: 'DM Serif Display';">Her Study Network — A Prayer Platform for Women</p>
-        <p style="margin-top: 0.8rem; font-size: 0.85rem;">© 2026 HSN | Love in Action, Hope in Every Gift</p>
-        <p>📞 Outreach / RSVP: 08105251185, 07066233703 | Venue: Kpaduma1 Primary School, Asokoro</p>
-        <p style="margin-top: 0.5rem;">📍 Join us 25th April 2026, 10am prompt — Bring a donation, bring your heart.</p>
-    </footer>
+<script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navContent = document.getElementById('navContent');
 
-    <script>
-        (function() {
-            const hamburger = document.getElementById('hamburgerBtn');
-            const mobileMenu = document.getElementById('mobileMenu');
-            const overlay = document.getElementById('menuOverlay');
-            const closeBtn = document.getElementById('closeMenuBtn');
-            function openMenu() { mobileMenu.classList.add('active'); overlay.classList.add('active'); document.body.style.overflow = 'hidden'; }
-            function closeMenu() { mobileMenu.classList.remove('active'); overlay.classList.remove('active'); document.body.style.overflow = ''; }
-            if (hamburger) hamburger.addEventListener('click', openMenu);
-            if (closeBtn) closeBtn.addEventListener('click', closeMenu);
-            if (overlay) overlay.addEventListener('click', closeMenu);
-            document.querySelectorAll('.mobile-nav-links a, .mobile-cta').forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    closeMenu();
-                    if (link.getAttribute('href') && link.getAttribute('href') !== '#') window.location.href = link.getAttribute('href');
-                });
-            });
-            window.addEventListener('resize', () => { if(window.innerWidth > 790 && mobileMenu?.classList.contains('active')) closeMenu(); });
-            const logoImg = document.querySelector('.logo-img');
-            if (logoImg && logoImg.complete && logoImg.naturalWidth === 0) logoImg.src = 'https://placehold.co/60x60?text=HSN';
-            logoImg?.addEventListener('error', () => { logoImg.src = 'https://placehold.co/60x60?text=HSN'; });
-        })();
-    </script>
+    if (menuBtn) {
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('active');
+            navContent.classList.toggle('active');
+        });
+    }
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            menuBtn?.classList.remove('active');
+            navContent?.classList.remove('active');
+        });
+    });
+
+    window.addEventListener('click', (e) => {
+        if (navContent && !navContent.contains(e.target) && !menuBtn?.contains(e.target) && navContent.classList.contains('active')) {
+            menuBtn?.classList.remove('active');
+            navContent.classList.remove('active');
+        }
+    });
+</script>
 </body>
 </html>
