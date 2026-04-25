@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>HSN | Radical Devotion — Cloud Sanctuary</title>
+    <link rel="icon" type="image/png" href="logo.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -182,7 +183,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: url('https://images.unsplash.com/photo-1517483000871-1dbf64a6e1c6?q=80&w=2070&auto=format&fit=crop');
+            background: url('https://i.pinimg.com/736x/b8/5b/11/b85b11c49af8a605da2122d8d2f42ee8.jpg ');
             background-size: cover;
             background-position: center;
         }
@@ -368,7 +369,9 @@
 <body>
 
     <nav class="navbar">
-        <a href="#" class="logo">HSN</a>
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="HSN Logo" style="height: 60px; width: auto; border-radius: 50%;">
+        </a>
 
         <div class="nav-content" id="navContent">
             <ul class="nav-links">
@@ -388,103 +391,155 @@
     </nav>
 
     <header class="hero">
-        <div class="hero-content">
-            <span class="hero-tag">✿ WELCOME TO HER STUDY NETWORK ✿</span>
-            <h1>Radical<br>Devotion.</h1>
-            <p>Here, we gather not only as individuals but as a collective force, women who are passionate about seeing God’s Kingdom established in every sphere of influence through His Word and through the works of our hands.</p>
-        </div>
+        <style>
+            .hero-content {
+            opacity: 0;
+            animation: slideInFloat 1s ease-out forwards;
+            animation-delay: 0.15s;
+            }
+
+            .hero-content .hero-tag,
+            .hero-content h1,
+            .hero-content p {
+            opacity: 0;
+            transform: translateY(28px);
+            animation: slideInFloat 0.9s ease-out forwards;
+            }
+
+            .hero-content .hero-tag { animation-delay: 0.3s; }
+            .hero-content h1 { animation-delay: 0.5s; }
+            .hero-content p { animation-delay: 0.7s; }
+
+            @keyframes slideInFloat {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            }
+        </style>
+<div class="hero-content" style="margin-top: 80px;">
+    <span class="hero-tag">✿ WELCOME TO HER STUDY NETWORK ✿</span>
+    <h1>A Sisterhood Rooted in God</h1>
+    <p>Here, we gather not only as individuals but as a collective force, women who are passionate about seeing God's Kingdom established in every sphere of influence through His Word and through the works of our hands.</p>
+</div>
     </header>
 
     <main class="container">
-        <div id="vision" class="hero-grid">
-            <div class="hero-copy">
-                <span class="eyebrow">The Vibe Shift</span>
-                <h2>Lead with grace,<br>scale with ease.</h2>
-                <p>We are moving away from the hustle and into the overflow. HSN is a sanctuary for those who want to build empires while staying soft, centered, and sacred.</p>
-                <a href="#" class="cta-pill" style="display:inline-block; margin-top:1rem;">Explore Manifesto</a>
-            </div>
-            <div class="hero-panel">
-                <div class="hero-card">
-                    <div class="icon">✨</div>
-                    <h3>Cloud Mindset</h3>
-                    <p>Clarity over chaos. We prioritize peace as our primary KPI.</p>
-                </div>
-                <div class="hero-card">
-                    <div class="icon">☁️</div>
-                    <h3>Soft Power</h3>
-                    <p>Influence that feels like a breeze, not a storm. Magnetic results.</p>
-                </div>
-            </div>
-        </div>
+<style>
+    .soft-enter {
+    opacity: 0;
+    transform: translateY(18px);
+    animation: softEnter 0.9s ease-out forwards;
+    }
 
-        <div id="pillars" class="pillars-section">
-            <span class="eyebrow">Core Values</span>
-            <h2>The Cloud Pillars</h2>
-            <div class="pillars-grid">
-                <div class="pillar-card">
-                    <h3>01. Radiance</h3>
-                    <p>Your energy is your greatest asset. We help you protect and project it.</p>
-                </div>
-                <div class="pillar-card">
-                    <h3>02. Ritual</h3>
-                    <p>Turning daily habits into sacred ceremonies that fuel your brand.</p>
-                </div>
-                <div class="pillar-card">
-                    <h3>03. Flow</h3>
-                    <p>Scaling without the friction. Systems that breathe with you.</p>
-                </div>
-            </div>
-        </div>
+    .soft-enter.delay-1 { animation-delay: 0.2s; }
+    .soft-enter.delay-2 { animation-delay: 0.35s; }
+    .soft-enter.delay-3 { animation-delay: 0.5s; }
+    .soft-enter.delay-4 { animation-delay: 0.65s; }
 
-        <div class="story-block">
-            <div class="story-content">
-                <div class="story-image">
-                    <img src="https://i.pinimg.com/736x/11/cb/7b/11cb7b5ba2f5dd951a4bf6b177695dce.jpg" alt="aesthetic desk">
-                </div>
-                <div class="story-copy" style="background:none; box-shadow:none;">
-                    <span class="eyebrow">Our Origins</span>
-                    <h2>Created for the Dreamers.</h2>
-                    <p>HSN started as a digital moodboard and grew into a global movement. We believe that business is a form of art, and your life is the canvas.</p>
-                </div>
-            </div>
-        </div>
+    @keyframes softEnter {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    }
+</style>
 
-        <div id="membership" class="membership-panel">
-            <h2>Ready to float?</h2>
-            <p>Join the Inner Circle for monthly strategy, dreamy networking, and radical support.</p>
-            <a href="#" class="join-now">Apply for Membership</a>
-        </div>
-    </main>
+<div id="vision" class="hero-grid soft-enter">
+    <div class="hero-copy soft-enter delay-1">
+    <span class="eyebrow">The Vibe Shift</span>
+    <h2>Lead with grace,<br>scale with ease.</h2>
+    <p>We are moving away from the hustle and into the overflow. HSN is a sanctuary for those who want to build empires while staying soft, centered, and sacred.</p>
+    <a href="#" class="cta-pill" style="display:inline-block; margin-top:1rem;">Explore Manifesto</a>
+    </div>
+    <div class="hero-panel">
+    <div class="hero-card soft-enter delay-2">
+        <div class="icon">✨</div>
+        <h3>Cloud Mindset</h3>
+        <p>Clarity over chaos. We prioritize peace as our primary KPI.</p>
+    </div>
+    <div class="hero-card soft-enter delay-3">
+        <div class="icon">☁️</div>
+        <h3>Soft Power</h3>
+        <p>Influence that feels like a breeze, not a storm. Magnetic results.</p>
+    </div>
+    </div>
+</div>
+
+<div id="pillars" class="pillars-section soft-enter delay-1">
+    <span class="eyebrow">Where Women Pray, Power Moves</span>
+    <h2>Built on Prayer. Strengthened by Faith.</h2>
+    <p style="max-width: 760px; margin: 1.5rem auto 2.5rem; color: var(--text-dim); font-size: 1rem; line-height: 1.8;">
+    Soft leadership. Sacred strategy. A space for sisters who choose peace, purpose and spiritual momentum.
+    </p>
+    <div class="pillars-grid">
+    <div class="pillar-card soft-enter delay-2">
+        <div style="font-size: 2rem; margin-bottom: 1rem;">✧</div>
+        <h3>01. A Sisterhood Rooted in God</h3>
+        <p>We gather as women united in faith, building God's Kingdom through prayer and action.</p>
+    </div>
+    <div class="pillar-card soft-enter delay-3">
+        <div style="font-size: 2rem; margin-bottom: 1rem;">☁️</div>
+        <h3>02. Prayer First. Always.</h3>
+        <p>Our foundation is prayer, guiding every decision and empowering our influence.</p>
+    </div>
+    <div class="pillar-card soft-enter delay-4">
+        <div style="font-size: 2rem; margin-bottom: 1rem;">✦</div>
+        <h3>03. She Prays. She Prevails.</h3>
+        <p>Through faith and perseverance, we rise stronger, prevailing in every sphere.</p>
+    </div>
+    </div>
+</div>
+
+<div class="story-block soft-enter delay-2">
+    <div class="story-content">
+    <div class="story-image">
+    <img src="https://i.pinimg.com/736x/11/cb/7b/11cb7b5ba2f5dd951a4bf6b177695dce.jpg" alt="Soft, inspirational study space">
+    </div>
+    <div class="story-copy">
+    <span class="eyebrow">Our Story</span>
+    <h2>From Hustle to Harmony: The Birth of HSN</h2>
+    <p>HSN was born from a desire to create a space where   women could thrive without sacrificing their peace. We believe in building empires with grace, leading with softness, and creating a sanctuary for sisters who want to make an impact while staying centered in their faith.</p>
+    </div>
+</div>
+    </div>
+
+<div class="membership-panel soft-enter delay-3">
+    <span class="eyebrow">Join the Sisterhood</span>
+    <h2>Ready to Lead with Grace?</h2>
+    <p>Become a part of HSN and experience the power of a community that prays together, grows together, and succeeds together.</p>
+    <a href="Register.html" class="join-now">Join Now</a>
+</div>
 
     <footer class="page-footer">
-        <p>© 2026 HOUSE OF SACRED NOISE. STAY SOFT. ✨</p>
+<p>© 2026 Sisters in Faith. Sisters in Growth  ✨</p>
     </footer>
 
     <script>
-        const menuBtn = document.getElementById('menuBtn');
-        const navContent = document.getElementById('navContent');
+const menuBtn = document.getElementById('menuBtn');
+const navContent = document.getElementById('navContent');
 
-        // Toggle mobile menu
-        menuBtn.addEventListener('click', () => {
-            menuBtn.classList.toggle('active');
-            navContent.classList.toggle('active');
-        });
+// Toggle mobile menu
+menuBtn.addEventListener('click', () => {
+    menuBtn.classList.toggle('active');
+    navContent.classList.toggle('active');
+});
 
-        // Close menu when clicking a link (ideal for UX)
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                menuBtn.classList.remove('active');
-                navContent.classList.remove('active');
-            });
-        });
+// Close menu when clicking a link (ideal for UX)
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+    menuBtn.classList.remove('active');
+    navContent.classList.remove('active');
+    });
+});
 
-        // Optional: Close menu when clicking outside
-        window.addEventListener('click', (e) => {
-            if (!navContent.contains(e.target) && !menuBtn.contains(e.target) && navContent.classList.contains('active')) {
-                menuBtn.classList.remove('active');
-                navContent.classList.remove('active');
-            }
-        });
+// Optional: Close menu when clicking outside
+window.addEventListener('click', (e) => {
+    if (!navContent.contains(e.target) && !menuBtn.contains(e.target) && navContent.classList.contains('active')) {
+    menuBtn.classList.remove('active');
+    navContent.classList.remove('active');
+    }
+});
     </script>
 
 </body>
