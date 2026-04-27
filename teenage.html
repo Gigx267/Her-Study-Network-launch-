@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>HSN Teen Club | Radiant Sisterhood – Register</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: radial-gradient(circle at 10% 20%, #fdf2f8 0%, #fff4e6 100%);
+            font-family: 'Inter', sans-serif;
+            color: #2e2a3b;
+            scroll-behavior: smooth;
+        }
+
+        /* custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #ffe4ef;
+            border-radius: 20px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #f8a5c2;
+            border-radius: 20px;
+        }
+
+        /* main container */
+        .main-container {
+            max-width: 1280px;
+            margin: 2rem auto;
+            padding: 1rem 1.5rem 3rem;
+        }
+
+        /* hero / header section with wave */
+        .hero-section {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            padding: 0.5rem 1.2rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #b13b6b;
+            border: 1px solid rgba(255, 175, 204, 0.6);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #9b2c54, #d45a7a, #f3a683);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+        .hero-scripture {
+            font-style: italic;
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255,245,250,0.7);
+            backdrop-filter: blur(4px);
+            border-radius: 60px;
+            padding: 0.7rem 1.5rem;
+            font-size: 0.95rem;
+            color: #794f66;
+            border-left: 4px solid #ffadc2;
+        }
+        .hero-scripture span {
+            font-weight: 700;
+            color: #b3416e;
+        }
+
+        /* bento grid premium */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.8rem;
+            margin-top: 2rem;
+        }
+
+        /* shared card styles */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            border-radius: 2rem;
+            padding: 1.8rem;
+            box-shadow: 0 20px 35px -12px rgba(128, 48, 78, 0.12);
+            transition: all 0.35s ease;
+            border: 1px solid rgba(255, 200, 220, 0.7);
+        }
+        .glass-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 28px 40px -12px rgba(156, 60, 98, 0.2);
+            border-color: #ffbfd2;
+        }
+
+        /* welcome left panel */
+        .welcome-panel {
+            grid-column: span 5;
+            background: linear-gradient(145deg, #fff8fc, #fff0f3);
+            position: relative;
+            overflow: hidden;
+        }
+        .floating-petal {
+            position: absolute;
+            opacity: 0.2;
+            font-size: 2rem;
+            pointer-events: none;
+        }
+        .verse-chip {
+            background: #ffecf0;
+            border-radius: 50px;
+            padding: 0.3rem 1rem;
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b43f68;
+            margin-bottom: 1rem;
+        }
+        .welcome-panel h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: #8e2c53;
+            margin: 0.5rem 0 1rem;
+        }
+        .value-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 1.8rem 0;
+        }
+        .value-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            background: white;
+            padding: 0.8rem 1.2rem;
+            border-radius: 1.5rem;
+            transition: all 0.2s;
+            border: 1px solid #ffe0ea;
+        }
+        .value-icon {
+            font-size: 1.8rem;
+        }
+        .value-item h4 {
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+            color: #602c45;
+        }
+        .value-item p {
+            font-size: 0.85rem;
+            color: #5b4b55;
+        }
+        .friend-quote {
+            background: #fde9f0;
+            border-radius: 1.5rem;
+            padding: 1rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border-left: 3px solid #ff91b5;
+        }
+
+        /* image panel */
+        .image-panel {
+            grid-column: span 4;
+            background: #fffafd;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+        .image-panel img {
+            width: 100%;
+            border-radius: 1.5rem;
+            object-fit: cover;
+            aspect-ratio: 4/3;
+            box-shadow: 0 16px 28px -8px rgba(0,0,0,0.1);
+            border: 2px solid white;
+        }
+        .image-caption {
+            font-size: 0.75rem;
+            margin-top: 0.8rem;
+            color: #a86f85;
+        }
+
+        /* feature card */
+        .feature-panel {
+            grid-column: span 3;
+            background: linear-gradient(125deg, #fff6fb, #ffeef4);
+        }
+        .feature-list {
+            list-style: none;
+            margin: 1rem 0 1.5rem;
+        }
+        .feature-list li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+        }
+        .feature-list i {
+            color: #e85f86;
+            width: 24px;
+        }
+        .btn-join-ghost {
+            background: transparent;
+            border: 2px solid #c75682;
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 700;
+            color: #b13b6b;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+            display: inline-block;
+            width: 100%;
+            text-decoration: none;
+        }
+        .btn-join-ghost:hover {
+            background: #c75682;
+            color: white;
+            transform: scale(0.98);
+        }
+
+        /* form section large */
+        .form-main-card {
+            grid-column: span 12;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(4px);
+            border-radius: 2.5rem;
+            padding: 2rem;
+            margin-top: 0.5rem;
+        }
+
+        .form-grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .full-width {
+            grid-column: span 2;
+        }
+        .form-group {
+            margin-bottom: 1.3rem;
+        }
+        label {
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            color: #4f3a49;
+            margin-bottom: 0.5rem;
+        }
+        .req {
+            color: #e65b86;
+            font-size: 1rem;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border-radius: 1.25rem;
+            border: 1.5px solid #ffe1ea;
+            background: #fffdfd;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            transition: 0.2s;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: #ff99bd;
+            box-shadow: 0 0 0 3px rgba(255, 153, 189, 0.2);
+            outline: none;
+        }
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 0.3rem;
+        }
+        .radio-group label, .checkbox-group label {
+            font-weight: 500;
+            background: #fff5f9;
+            padding: 0.4rem 1.1rem;
+            border-radius: 60px;
+            gap: 6px;
+            cursor: pointer;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            width: auto;
+            accent-color: #ea6a94;
+        }
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #9f3f64;
+            border-left: 5px solid #ffa5c1;
+            padding-left: 1rem;
+            margin: 1.2rem 0 1.5rem 0;
+        }
+        .btn-primary {
+            background: radial-gradient(circle at 30% 10%, #c24c76, #9b2a53);
+            color: white;
+            font-weight: 800;
+            padding: 1rem 1.8rem;
+            border: none;
+            border-radius: 60px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.25s;
+            box-shadow: 0 12px 20px -10px #c24c7650;
+            letter-spacing: 0.5px;
+        }
+        .btn-primary:hover {
+            transform: scale(1.01);
+            background: radial-gradient(circle at 30% 10%, #db6088, #af2f5a);
+            box-shadow: 0 18px 25px -8px #b13b6b;
+        }
+        .footer-note {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            font-size: 0.75rem;
+            color: #b8889c;
+        }
+
+        @media (max-width: 900px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .welcome-panel, .image-panel, .feature-panel, .form-main-card {
+                grid-column: span 1;
+            }
+            .form-grid-2col {
+                grid-template-columns: 1fr;
+            }
+            .full-width {
+                grid-column: span 1;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+        .small-text {
+            font-size: 0.7rem;
+        }
+        i.fa, i.far {
+            margin-right: 6px;
+        }
+        
+    </style>
+    <style>
+        /* Navbar Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 200, 220, 0.5);
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(128, 48, 78, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .navbar .logo img {
+            transition: transform 0.2s;
+            height: 38px;
+            width: auto;
+            border-radius: 50%;
+        }
+
+        .navbar .logo img:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: #2e2a3b;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .nav-links li a:hover {
+            background: rgba(255, 175, 204, 0.1);
+            color: #b13b6b;
+        }
+
+        .nav-links li a.active {
+            background: linear-gradient(135deg, #9b2c54, #d45a7a);
+            color: white;
+        }
+
+        .cta-pill {
+            background: linear-gradient(135deg, #c24c76, #9b2a53);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(194, 76, 118, 0.3);
+        }
+
+        .cta-pill:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(194, 76, 118, 0.4);
+            background: linear-gradient(135deg, #db6088, #af2f5a);
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .nav-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #b13b6b;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0.75rem 1rem;
+            }
+
+            .navbar .logo img {
+                height: 32px;
+            }
+
+            .nav-content {
+                position: fixed;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(12px);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1rem 1.5rem;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 12px rgba(128, 48, 78, 0.08);
+            }
+
+            .nav-content.open {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+                width: 100%;
+            }
+
+            .nav-links li {
+                width: 100%;
+            }
+
+            .nav-links li a {
+                display: block;
+                width: 100%;
+                padding: 0.8rem 1rem;
+                text-align: left;
+            }
+
+            .cta-pill {
+                margin-top: 1rem;
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-toggle.open span:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .nav-toggle.open span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .nav-toggle.open span:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+        }
+
+        /* Adjust body padding for fixed navbar */
+        body {
+            padding-top: 80px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
+        }
+    </style>
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const navContent = document.getElementById('navContent');
+
+        menuBtn.addEventListener('click', () => {
+            navContent.classList.toggle('open');
+            menuBtn.classList.toggle('open');
+        });
+
+        // Close menu on link click (mobile)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navContent.classList.remove('open');
+                menuBtn.classList.remove('open');
+            });
+        });
+    </script>
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="HSN Logo">
+        </a>
+
+        <div class="nav-content" id="navContent">
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT </a></li>
+               
+                <li><a href="gatherings.html">EVENTS</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+          
+        </div>
+
+        <button class="nav-toggle" id="menuBtn" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+<style>
+    /* Navbar Styles */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 200, 220, 0.5);
+        padding: 1rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 12px rgba(128, 48, 78, 0.08);
+        transition: all 0.3s ease;
+    }
+
+    .navbar .logo img {
+        transition: transform 0.2s;
+    }
+
+    .navbar .logo img:hover {
+        transform: scale(1.05);
+    }
+
+    .nav-content {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-links li a {
+        text-decoration: none;
+        color: #2e2a3b;
+        font-weight: 600;
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        transition: all 0.2s;
+        position: relative;
+    }
+
+    .nav-links li a:hover {
+        background: rgba(255, 175, 204, 0.1);
+        color: #b13b6b;
+    }
+
+    .nav-links li a.active {
+        background: linear-gradient(135deg, #9b2c54, #d45a7a);
+        color: white;
+    }
+
+    .cta-pill {
+        background: linear-gradient(135deg, #c24c76, #9b2a53);
+        color: white;
+        padding: 0.6rem 1.2rem;
+        border-radius: 40px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.9rem;
+        transition: all 0.2s;
+        box-shadow: 0 4px 12px rgba(194, 76, 118, 0.3);
+    }
+
+    .cta-pill:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(194, 76, 118, 0.4);
+        background: linear-gradient(135deg, #db6088, #af2f5a);
+    }
+
+    .nav-toggle {
+        display: none;
+        flex-direction: column;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+    }
+
+    .nav-toggle span {
+        width: 25px;
+        height: 3px;
+        background: #b13b6b;
+        margin: 3px 0;
+        transition: 0.3s;
+        border-radius: 2px;
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+        .nav-content {
+            position: fixed;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(12px);
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 1rem 1.5rem;
+            transform: translateY(-100%);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(128, 48, 78, 0.08);
+        }
+
+        .nav-content.open {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .nav-links {
+            flex-direction: column;
+            gap: 1rem;
+            width: 100%;
+        }
+
+        .nav-links li {
+            width: 100%;
+        }
+
+        .nav-links li a {
+            display: block;
+            width: 100%;
+            padding: 0.8rem 1rem;
+            text-align: left;
+        }
+
+        .cta-pill {
+            margin-top: 1rem;
+            width: 100%;
+            text-align: center;
+        }
+
+        .nav-toggle {
+            display: flex;
+        }
+
+        .nav-toggle.open span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .nav-toggle.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle.open span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+    }
+
+    /* Adjust body padding for fixed navbar */
+    body {
+        padding-top: 80px; /* Adjust based on navbar height */
+    }
+</style>
+<script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const navContent = document.getElementById('navContent');
+
+    menuBtn.addEventListener('click', () => {
+        navContent.classList.toggle('open');
+        menuBtn.classList.toggle('open');
+    });
+
+    // Close menu on link click (mobile)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navContent.classList.remove('open');
+            menuBtn.classList.remove('open');
+        });
+    });
+</script>
+</head>
+<body>
+<div class="main-container">
+    <div class="hero-section">
+        <div class="hero-badge">
+            <i class="fas fa-heart"></i> HSN TEENAGE CLUB
+        </div>
+        <h1>Radiant. Rooted. <br> Ready for His purpose.</h1>
+        <div class="hero-scripture">
+            <i class="fas fa-feather-alt"></i> “Let no one despise your youth, but be an example...”  
+            <span>— 1 Timothy 4:12</span>
+        </div>
+    </div>
+
+    <div class="bento-grid">
+        <!-- WELCOME & VALUES PANEL -->
+        <div class="glass-card welcome-panel">
+            <div class="verse-chip"><i class="fas fa-dove"></i> sisterhood of grace</div>
+            <h2>Growing in Faith.<br>Building real community.</h2>
+            <div class="value-stack">
+                <div class="value-item">
+                    <div class="value-icon">📖</div>
+                    <div><h4>Bible study that hits home</h4><p>Scripture isn't boring — it's our lifeline. interactive & deep.</p></div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🙏🏽</div>
+                    <div><h4>Prayer that moves mountains</h4><p>Vulnerable, powerful prayer circles + worship moments.</p></div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🌸</div>
+                    <div><h4>Sisterhood unbroken</h4><p>Accountability, fun, and encouragement — no judgement zone.</p></div>
+                </div>
+            </div>
+            <div class="friend-quote">
+                <i class="fas fa-star-of-life"></i> “You are not too young to lead, to pray, to change your world for Jesus.”
+                <div style="font-weight: 400; margin-top: 6px;">— HSN Teen Leadership</div>
+            </div>
+        </div>
+
+        <!-- IMAGE CARD (SISTERHOOD) -->
+        <div class="glass-card image-panel">
+            <img src="add1.jpeg" alt="HSN Teen Sisterhood gathering" onerror="this.src='https://placehold.co/600x400/ffe7ef/c26a8c?text=Teen+Sisterhood+Moments'; this.onerror=null;">
+            <div class="image-caption"><i class="fas fa-camera"></i> 📸 Real teens, real faith, real friendships</div>
+            <div style="margin-top: 1.2rem;">
+                <div class="verse-chip"><i class="fas fa-leaf"></i> transformed by renewal</div>
+                <p style="font-size: 0.8rem; margin-top: 8px;">Romans 12:2 — we're changing the narrative.</p>
+            </div>
+        </div>
+
+        <!-- INVITE / QUICK INFO PANEL -->
+        <div class="glass-card feature-panel">
+            <i class="fas fa-sparkle" style="font-size: 1.5rem; color:#e06d93;"></i>
+            <h3 style="margin: 0.5rem 0 0.8rem;">All teens welcome ✨</h3>
+            <ul class="feature-list">
+                <li><i class="fas fa-praying-hands"></i> Weekly Bible & discussion</li>
+                <li><i class="fas fa-music"></i> Prayer + worship nights</li>
+                <li><i class="fas fa-comments"></i> Honest sisterhood circles</li>
+                <li><i class="fas fa-cloud-sun"></i> Faith challenges & devotion drops</li>
+            </ul>
+            <a href="#registrationForm" class="btn-join-ghost"><i class="fas fa-arrow-right"></i> take your spot →</a>
+            <div style="margin-top: 1rem; font-size: 0.7rem; text-align: center;">#RadicalForJesus #TeenSisterhood</div>
+        </div>
+
+        <!-- MAIN REGISTRATION FORM (FORMSPREE) -->
+        <div class="form-main-card" id="registrationForm">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.5rem;">
+                <i class="fas fa-pen-fancy" style="color:#b94973; font-size: 1.8rem;"></i>
+                <span style="font-weight: 800; font-size: 1.4rem; letter-spacing: -0.3px;">become a member</span>
+            </div>
+            <p style="margin-bottom: 0.5rem; color:#5c4762;">Join the sisterhood — fill the form below, we'll reach out with next steps 💕</p>
+            <!-- REPLACE YOUR_FORM_ID with actual Formspree ID (keep it working) -->
+            <form action="https://formspree.io/f/mqewgjba" method="POST">
+                <input type="text" name="_gotcha" style="display:none">
+                
+                <!-- Personal info row -->
+                <div class="section-title"><i class="far fa-user-circle"></i> 1. about you</div>
+                <div class="form-grid-2col">
+                    <div class="form-group">
+                        <label>Full Name <span class="req">*</span></label>
+                        <input type="text" name="Full Name" required placeholder="e.g., Chloe Adebayo">
+                    </div>
+                    <div class="form-group">
+                        <label>Age <span class="req">*</span></label>
+                        <select name="Age" required>
+                            <option value="">Select</option>
+                            <option>13-15</option>
+                            <option>16-17</option>
+                            <option>18-19</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>School Name (optional)</label>
+                        <input type="text" name="School Name" placeholder="Your school">
+                    </div>
+                    <div class="form-group">
+                        <label>Grade / Class</label>
+                        <input type="text" name="Grade Level" placeholder="e.g., SS2, 10th Grade">
+                    </div>
+                </div>
+
+                <div class="section-title"><i class="fas fa-mobile-alt"></i> 2. contact</div>
+                <div class="form-grid-2col">
+                    <div class="form-group">
+                        <label>WhatsApp / Phone <span class="req">*</span></label>
+                        <input type="tel" name="Phone Number" required placeholder="+234 123 456 7890">
+                    </div>
+                    <div class="form-group">
+                        <label>Email (optional)</label>
+                        <input type="email" name="Email Address" placeholder="teen@example.com">
+                    </div>
+                </div>
+
+                <div class="section-title"><i class="fas fa-church"></i> 3. spiritual heartbeat</div>
+                <div class="form-grid-2col">
+                    <div class="form-group">
+                        <label>Are you a Christian? <span class="req">*</span></label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="Christian Status" value="Yes" required> Yes</label>
+                            <label><input type="radio" name="Christian Status" value="No"> No</label>
+                            <label><input type="radio" name="Christian Status" value="I’m still learning"> Still learning</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>How often do you study the Bible?</label>
+                        <select name="Bible Study Frequency">
+                            <option value="">Select</option>
+                            <option>Daily</option>
+                            <option>A few times a week</option>
+                            <option>Occasionally</option>
+                            <option>Rarely</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>What do you hope to gain from HSN Teen Club? <span class="req">*</span></label>
+                        <textarea rows="2" name="Hope / Expectations" required placeholder="I hope to grow deeper in faith, build sisterhood, and discover my purpose..."></textarea>
+                    </div>
+                </div>
+
+                <div class="section-title"><i class="fas fa-hand-peace"></i> 4. participation & interests</div>
+                <div class="form-grid-2col">
+                    <div class="form-group">
+                        <label>Interests (check all that apply)</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="Interest_Join Bible study"> Bible study</label>
+                            <label><input type="checkbox" name="Interest_Prayer groups"> Prayer groups</label>
+                            <label><input type="checkbox" name="Interest_Sisterhood"> Sisterhood events</label>
+                            <label><input type="checkbox" name="Interest_Outreach"> Outreach / serve</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Would you invite a friend?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="Invite Friend" value="Yes"> Yes, definitely</label>
+                            <label><input type="radio" name="Invite Friend" value="Maybe"> Maybe</label>
+                            <label><input type="radio" name="Invite Friend" value="No"> No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-title"><i class="fas fa-file-signature"></i> 5. parent consent</div>
+                <div class="form-group">
+                    <label>Parent/Guardian Awareness <span class="req">*</span></label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="Parent Awareness" value="Yes, my parent/guardian is aware" required> Yes, they're aware</label>
+                        <label><input type="radio" name="Parent Awareness" value="Not yet, but I will inform them"> Not yet, I'll inform them</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary"><i class="fas fa-check-circle"></i> 🌸 Register & Join the Club 🌸</button>
+                <div class="footer-note">
+                    ✨ <strong>You are chosen & set apart!</strong> ✨ We'll contact you via WhatsApp with details. Welcome to the sisterhood.
+                </div>
+            </form>
+            <div style="margin-top: 1.5rem; border-top: 1px dashed #ffcddb; padding-top: 1rem; text-align: center; font-size: 0.7rem;">
+                <i class="fas fa-heart" style="color:#db6d93;"></i> rooted in grace • raising radiant women of faith • HSN Teen Club
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- small floating decorative element (JS just for subtle floating elements) -->
+<script>
+    // purely decorative - adds floating petal effect to welcome panel (lightweight)
+    const welcomeCard = document.querySelector('.welcome-panel');
+    if(welcomeCard) {
+        const petals = ['🌸', '🌼', '🌺', '✨', '🍃'];
+        for(let i=0; i<5; i++) {
+            let petal = document.createElement('div');
+            petal.classList.add('floating-petal');
+            petal.innerText = petals[Math.floor(Math.random() * petals.length)];
+            petal.style.bottom = Math.random() * 100 + '%';
+            petal.style.left = Math.random() * 100 + '%';
+            petal.style.fontSize = (Math.random() * 1.2 + 0.8) + 'rem';
+            petal.style.animation = `float ${Math.random() * 6 + 4}s infinite ease-in-out`;
+            petal.style.opacity = '0.2';
+            welcomeCard.appendChild(petal);
+        }
+    }
+</script>
+<style>
+    .floating-petal {
+        position: absolute;
+        pointer-events: none;
+        z-index: 1;
+        user-select: none;
+    }
+    @keyframes float {
+        0% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-12px) rotate(8deg); }
+        100% { transform: translateY(0px) rotate(0deg); }
+    }
+    .welcome-panel {
+        overflow: hidden;
+        position: relative;
+    }
+</style>
+</body>
+</html>
